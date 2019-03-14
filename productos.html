@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <h1>hola esto son los productos</h1>
+
+    <div class="form-group">
+        <label for="usr">Nombre:</label>
+        <input type="text" class="form-control" id="usr" ng-model="nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="usr">Precio:</label>
+        <input type="text" class="form-control" id="usr" ng-model="precio">
+    </div>
+
+    <input type="button" class="btn btn-success" value="añadir" ng-click="addProducto()">
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td class="col">Nombre</td>
+                <td class="col">Precio</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in productos">
+                <td>{{x.nombre}}</td>
+                <td>{{x.precio}}€</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

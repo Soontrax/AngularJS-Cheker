@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <h1>Esto es el cajero</h1>
+
+    <select ng-model="productoSeleccionado">
+        <option ng-repeat="x in productos" value="{{x.id}}">{{x.nombre}}</option>
+    </select>
+
+    <div class="form-group">
+        <label for="usr">Cantidad:</label>
+        <input type="text" class="form-control" id="usr" ng-model="cantidad">
+    </div>
+
+    <input type="button" class="btn btn-success" value="añadir" ng-click="addCarrito()">
+
+    <br>
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td class="col">Producto</td>
+                <td class="col">Precio</td>
+                <td class="col">Cantidad</td>
+                <td class="col">Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in carrito">
+                <td>{{x.nombre}}</td>
+                <td>{{x.precio}}€</td>
+                <td>{{x.cantidad}}</td>
+                <td>{{x.total}}€</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{getTotalCarrito()}}€</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
